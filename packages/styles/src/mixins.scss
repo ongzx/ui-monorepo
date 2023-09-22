@@ -1,0 +1,17 @@
+@import "typography.scss";
+@import "colors.scss";
+
+@mixin typeFontRegular {
+  font-weight: $typeFontRegularWeight;
+  font-family: $typeFontRegularFace;
+}
+
+@mixin typeFontMedium {
+  font-weight: $typeFontMediumWeight;
+  font-family: $typeFontMediumFace;
+}
+
+@mixin typeFontBold {
+  font-weight: $typeFontBoldWeight;
+  font-family: $typeFontBoldFace;
+}

@@ -1,8 +1,8 @@
 module.exports = {
-  roots: ['<rootDir>/components'],
+  roots: ['<rootDir>/packages'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js'],
-  testMatch: ['<rootDir>/components/**/*.test.tsx'],
+  testMatch: ['<rootDir>/packages/**/*/*.test.tsx'],
   modulePaths: ['<rootDir>/dist'],
   testPathIgnorePatterns: ['node_modules/'],
   transform: {

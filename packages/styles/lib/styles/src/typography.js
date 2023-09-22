@@ -1,0 +1,10 @@
+export var typeFontRegularFace = "var(--nt-font-regular-f,-apple-system,'HelveticaNeue','Helvetica Neue','Roboto','Droid Sans',Arial,sans-serif)";
+export var typeFontMediumFace = "var(--nt-font-medium-f,-apple-system,'HelveticaNeue-Medium','Helvetica Neue','Roboto','Droid Sans',Arial,sans-serif)";
+export var typeFontBoldFace = "var(--nt-font-bold-f,-apple-system,'HelveticaNeue-Bold','Helvetica Neue','Roboto','Droid Sans','Arial Bold',Arial,sans-serif)";
+export var typeFontRegularWeight = "var(--nt-font-regular-w,400)";
+export var typeFontMediumWeight = "var(--nt-font-medium-w,500)";
+export var typeFontBoldWeight = "var(--nt-font-bold-w,700)";
+export var typeFontRegularClass = "nt-regular";
+export var typeFontMediumClass = "nt-medium";
+export var typeFontBoldClass = "nt-bold";
+//# sourceMappingURL=typography.js.map

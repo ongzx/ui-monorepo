@@ -1,28 +1,18 @@
-<h1 align="center">The Design System</h1>
+<h1 align="center">@ui/monorepo</h1>
 
-> This is a proof of concept of a monorepo structure for serving react components and design tokens
-
-<p align="center">
-  <a href="https://lerna.js.org/">
-    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with Lerna" />
-  </a>
-  <a href="http://commitizen.github.io/cz-cli/">
-	  <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitzen friendly" />
-  </a>
-  <a href="https://conventionalcommits.org">
-	  <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" />
-  </a>
-</p>
+> This is a reactJS UI library using monorepo structure with Lerna
 
 ## Getting started
 
-This is a monorepo repository using [Lerna](https://lerna.js.org/), [Commitzen](http://commitizen.github.io/cz-cli/) and [Conventional Commits](https://conventionalcommits.org) to maintain and manage component versions and for documentation, we use [Storybook](https://storybook.js.org/) and [Compodoc](https://compodoc.app/), you can access by clicking [here](https://thedesignsystem.gustavoribeiro.dev/)
+This is a monorepo repository using [Lerna](https://lerna.js.org/), [Commitzen](http://commitizen.github.io/cz-cli/) and [Conventional Commits](https://conventionalcommits.org) to maintain and manage component versions and for documentation, we use [Storybook](https://storybook.js.org/).
 
 List of packages containing in this repository:
 
 | Name of package                                | Description                                  |
 | ---------------------------------------------- | -------------------------------------------- |
-| [`@thedesignsystem/components`](./components/) | React components with each package.json file |
+| [`@ui/checkbox`](./packages/Checkbox) | A reactJS checkbox component |
+| [`@ui/radio`](./packages/Radio) | A reactJS radio component |
+| [`@ui/table`](./packages/Table) | A reactJS table component |
 
 ## Setup
 
@@ -35,12 +25,19 @@ Local setup to run this project locally
 
 ### Configuration
 
-- Install all the dependencies: `npm i`
+- Install all the dependencies: `yarn install`
+- Bootstrap packages: `yarn lerna:bootstrap`
 - You can see the components of this repo in:
-  - Storybook by running `npm run start:storybook`
+  - Storybook by running `yarn start:storybook`
 
 ### Installing components
 
+TODO: publish package to npm registry
 All components in this repository are installed separately, that is, each component has its own npm package, for example if you want to install the button component:
 
-`npm i @thedesignsystem/button`
+`yarn install @ui/table`
+
+### Running test
+Simply run this command to execute the test cases for components in this packages. Powered by Jest + react testing library.
+
+`lerna run test`

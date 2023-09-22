@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./src",
+    "../../*.d.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "./lib"
+  },
+  "exclude": [
+    "node_modules",
+    "./src/**.test.tsx",
+    "./src/**.stories.tsx",
+  ]
+}

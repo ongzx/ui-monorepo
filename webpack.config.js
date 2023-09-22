@@ -1,4 +1,8 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
+
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: './src/index.ts',
@@ -9,14 +13,14 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-    alias: {
-      '@thedesignsystem/button': path.resolve(
-        __dirname,
-        '../components/button/src/index',
-      ),
-    },
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+    })
+  ],
   module: {
     rules: [
       {
@@ -27,10 +31,57 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.(stories|story)\.mdx$/,
+      //   use: [
+      //     {
+      //       loader: 'babel-loader',
+      //       options: {
+      //         plugins: ['@babel/plugin-transform-react-jsx'],
+      //       },
+      //     },
+      //     {
+      //       loader: '@mdx-js/loader',
+      //       options: {
+      //         compilers: [createCompiler({})],
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.scss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: isDevelopment
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
       },
+
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
+      }
     ],
   },
   externals: {

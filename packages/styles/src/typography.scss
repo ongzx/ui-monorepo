@@ -1,0 +1,44 @@
+@import url("https://fonts.cdnfonts.com/css/avenir-lt-pro");
+
+
+$typeFontRegularFace: var(
+  --nt-font-regular-f,
+  -apple-system,
+  "Avenir",
+  "HelveticaNeue",
+  "Helvetica Neue",
+  "Roboto",
+  "Droid Sans",
+  Arial,
+  sans-serif
+);
+$typeFontMediumFace: var(
+  --nt-font-medium-f,
+  -apple-system,
+  "Avenir",
+  "HelveticaNeue-Medium",
+  "Helvetica Neue",
+  "Roboto",
+  "Droid Sans",
+  Arial,
+  sans-serif
+);
+$typeFontBoldFace: var(
+  --nt-font-bold-f,
+  -apple-system,
+  "Avenir",
+  "HelveticaNeue-Bold",
+  "Helvetica Neue",
+  "Roboto",
+  "Droid Sans",
+  "Arial Bold",
+  Arial,
+  sans-serif
+);
+$typeFontRegularWeight: var(--nt-font-regular-w, 400);
+$typeFontMediumWeight: var(--nt-font-medium-w, 500);
+$typeFontBoldWeight: var(--nt-font-bold-w, 700);
+
+$typeFontRegularClass: "nt-regular";
+$typeFontMediumClass: "nt-medium";
+$typeFontBoldClass: "nt-bold";

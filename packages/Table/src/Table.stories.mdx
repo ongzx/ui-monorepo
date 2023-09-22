@@ -1,0 +1,19 @@
+
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Table } from './Table';
+
+<Meta title="MDX/Table" component={Table} />
+
+# Table
+
+With `MDX` we can define a story for `Checkbox` right in the middle of our
+markdown documentation.
+
+<Canvas>
+  <Story name="all checkboxes">
+    <form>
+      <Table />
+    </form>
+  </Story>
+</Canvas>

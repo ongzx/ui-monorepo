@@ -1,0 +1,9 @@
+export const colorPrimary = "var(--cl-primary,#5c50bb)" as const;
+export const colorSecondary = "var(--cl-secondary,#efedfd)" as const;
+export const colorDefaultBg = "var(--cl-default-bg,#f7f7f7)" as const;
+export const colorBorder = "var(--cl-border, #a8a8a8)" as const;
+export const colorSeparator = "var(--cl-separator, #e1e1e1" as const;
+export const white = "white" as const;
+export const black = "black" as const;
+export const black12 = "rgba(0, 0, 0, 0.12)" as const;
+export const disabled = "rgba(0, 0, 0, 0.35)" as const;

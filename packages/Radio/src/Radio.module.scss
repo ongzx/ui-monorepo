@@ -1,0 +1,101 @@
+@import "~@ui/styles/src/colors.scss";
+@import "~@ui/styles/src/typography.scss";
+
+
+.radio {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 30px;
+  height: 30px;
+  margin-right: 24px;
+  border: 1px solid $colorBorder;
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:before {
+    content: "";
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: $white;
+    border: 0px;
+  }
+
+  &:checked {
+    transform: scale(1);
+    border: 8px solid $colorPrimary;
+    border-radius: 100%;
+  }
+
+  &:disabled {
+    transform: scale(1);
+    border: 8px solid $disabled;
+    background-color: $disabled;
+    border-radius: 100%;
+  }
+
+  &:checked:before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    border: 8px solid $colorPrimary;
+    border-radius: 100%;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+}
+
+.label {
+  flex: 1;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $typeFontRegularFace;
+  font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .radio {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+
+    &:checked {
+      border: 6px solid $colorPrimary;
+    }
+
+    &:disabled {
+      border: 6px solid $disabled;
+    }
+
+    &:focus {
+      border: 6px solid $colorPrimary;
+    }
+  }
+
+  .label {
+    flex: 1;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    font-family: $typeFontRegularFace;
+    font-size: 14px;
+  }
+
+}

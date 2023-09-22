@@ -1,0 +1,127 @@
+@import "~@ui/styles/src/colors.scss";
+@import "~@ui/styles/src/typography.scss";
+
+
+.checkbox {
+  width: 32px;
+  height: 32px;
+  margin-right: 24px;
+  display: block;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+  }
+
+  input:disabled ~ .checkmark {
+    background-color: $disabled;
+    border: 1px solid $disabled;
+
+    ~ .label {
+      color: $disabled;
+    }
+  }
+
+  input:checked:disabled ~ .checkmark {
+    background-color: $disabled;
+    border: 1px solid $disabled;
+  }
+
+
+  .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+    border: 1px solid $colorBorder;
+    background-color: #fff;
+    transition:
+      0.3s ease background-color,
+      0.5s ease transform;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.0781 2.91069C15.4034 3.23669 15.4034 3.76402 15.0781 4.08935L6.49009 12.6774L6.48308 12.6846C6.47833 12.6896 6.47352 12.6945 6.46863 12.6994C6.14263 13.0241 5.61529 13.0241 5.28996 12.6994L0.910626 8.32009C0.585293 7.99409 0.585293 7.46609 0.910626 7.14142C1.23596 6.81609 1.76329 6.81609 2.08929 7.14142L5.87863 10.9314L13.8994 2.91069C14.2254 2.58535 14.7528 2.58535 15.0781 2.91069Z" fill="white"/></svg>');
+    background-position: center;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+}
+
+.label {
+  flex: 1;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $typeFontRegularFace;
+  font-size: 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    font-size: 16px;
+
+    .checkmark {
+      height: 24px;
+      width: 24px;
+      border-radius: 6px;
+    }
+
+    .checkmark:after {
+      left: 0px;
+      top: 0px;
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none"><g clip-path="url(%23clip0_4124_40)"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.97 2.183C12.214 2.4275 12.214 2.823 11.97 3.067L5.52898 9.508L5.52372 9.51344C5.52016 9.51718 5.51654 9.52088 5.51288 9.52455C5.26838 9.76805 4.87288 9.76805 4.62888 9.52455L1.34438 6.24005C1.10038 5.99555 1.10038 5.59955 1.34438 5.35605C1.58838 5.11205 1.98388 5.11205 2.22838 5.35605L5.07038 8.1985L11.086 2.183C11.3305 1.939 11.726 1.939 11.97 2.183Z" fill="white"/></g><defs><clipPath id="clip0_4124_40"><rect width="12" height="12" fill="white" transform="translate(0.661377)"/></clipPath></defs></svg>');
+      background-position: center;
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}

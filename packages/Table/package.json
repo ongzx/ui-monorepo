@@ -1,0 +1,36 @@
+{
+  "name": "@ui/table",
+  "version": "0.0.0",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "Chi Hi"
+  },
+  "license": "MIT",
+  "types": "lib/Table/src/index.d.ts",
+  "main": "src/index.tsx",
+  "scripts": {
+    "tsc": "tsc --noEmit false --declaration --emitDeclarationOnly",
+    "test": "jest --config=../../jest.config.js",
+    "test:watch": "jest button --config=../../jest.config.js --watch",
+    "clean": "rimraf dist && rimraf node_modules && rimraf package-lock.json"
+  },
+  "dependencies": {
+    "@ui/styles": "*",
+    "@ui/radio": "*",
+    "@ui/checkbox": "*"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}

@@ -2,10 +2,15 @@ const custom = require('../webpack.config.js');
 
 module.exports = {
   stories: [
-    '../components/**/*.stories.(ts|tsx|mdx)',
-    '../stories/*.stories.(ts|tsx|mdx)',
+    '../packages/**/*.stories.(ts|tsx|mdx)'
   ],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-docs',
+    '@storybook/addon-essentials',
+    '@storybook/addon-viewport'
+  ],
+  presets: ['@storybook/addon-docs/preset'],
   webpackFinal: (config) => {
     config.resolve.extensions.push('.ts', '.tsx');
     return {

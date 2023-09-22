@@ -1,0 +1,30 @@
+{
+  "name": "@ui/radio",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "ongch <ongch@sea.com>",
+  "homepage": "",
+  "license": "ISC",
+  "types": "lib/radio/src/index.d.ts",
+  "main": "src/index.tsx",
+  "directories": {
+    "src": "src",
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "scripts": {
+    "tsc": "tsc --noEmit false --declaration --emitDeclarationOnly",
+    "test": "jest --config=../../jest.config.js"
+  }
+}
